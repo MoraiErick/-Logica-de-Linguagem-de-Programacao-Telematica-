@@ -1,25 +1,17 @@
 #include <stdio.h>
 
 int main() {
-    int matriz[3][3]; 
-    int i, soma = 0; 
-
-    
-    printf("Digite a matriz 3x3:\n");
-    for (i = 0; i < 3; i++) {
+    int matriz[3][3];
+    for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            printf("Elemento [%d][%d]: ", i, j);
+            printf("Digite o elemento [%d][%d]: ", i+1, j+1);
             scanf("%d", &matriz[i][j]);
         }
     }
-
-   
-    for (i = 0; i < 3; i++) {
+    int soma = 0;
+    for (int i = 0; i < 3; i++) {
         soma += matriz[i][i];
     }
-
-   
     printf("A soma dos elementos da diagonal principal é: %d\n", soma);
-
     return 0;
 }
