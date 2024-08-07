@@ -1,0 +1,73 @@
+PROCEDIMENTO FritarOvo
+  INÍCIO
+    OBTER Ovo
+    OBTER Frigideira
+    OBTER Óleo
+
+    AQUECER Frigideira em FOGO MÉDIO
+    ADICIONAR Óleo à Frigideira
+    ESPERAR até que o Óleo esteja QUENTE
+
+    QUEBRAR Ovo na Frigideira
+    COZINHAR por 2-3 MINUTOS ou até que a CLARA esteja COZIDA
+    VIRAR Ovo
+    COZINHAR por mais 1-2 MINUTOS ou até que a GEMA esteja COZIDA ao seu gosto
+
+    RETIRAR Ovo da Frigideira
+    SERVIR
+  FIM
+--------------------------------------------------------------------------------------------
+
+PROCEDIMENTO AtravessarRua
+  INÍCIO
+    VERIFICAR se a rua é SEGURA para atravessar
+    SE a rua NÃO for SEGURA, ENTÃO
+      ESPERAR até que a rua esteja SEGURA
+    FIM SE
+
+    OLHAR para a ESQUERDA e para a DIREITA para verificar se há VEÍCULOS aproximando
+    SE houver VEÍCULOS aproximando, ENTÃO
+      ESPERAR até que os VEÍCULOS passem
+    FIM SE
+
+    VERIFICAR se há SEMÁFORO ou SINALIZAÇÃO de trânsito
+    SE houver SEMÁFORO ou SINALIZAÇÃO, ENTÃO
+      SEGUIR as instruções do SEMÁFORO ou SINALIZAÇÃO
+    FIM SE
+
+    ATRAVESSAR a rua com ATENÇÃO e CAUTELA
+    VERIFICAR se há VEÍCULOS aproximando enquanto atravessa
+    SE houver VEÍCULOS aproximando, ENTÃO
+      PARAR e ESPERAR até que os VEÍCULOS passem
+    FIM SE
+
+    CHEGAR ao outro lado da rua com SEGURANÇA
+  FIM
+
+---------------------------------------------------------------------------------------------
+
+PROCEDIMENTO PrepararVitaminaDeBanana
+  INÍCIO
+    OBTER Banana
+    OBTER Leite
+    OBTER Açúcar (opcional)
+    OBTER Liquidificador
+
+    LAVAR a Banana
+    DESCASCAR a Banana
+    COLOCAR a Banana no Liquidificador
+
+    ADICIONAR Leite ao Liquidificador
+    SE desejar, ADICIONAR Açúcar ao Liquidificador
+
+    LIGAR o Liquidificador
+    BATER a mistura até que esteja LISA e CREAMOSA
+
+    DESLIGAR o Liquidificador
+    COLOCAR a vitamina em um COPo
+
+    SERVIR a vitamina de banana FRIA
+  FIM
+
+
+
