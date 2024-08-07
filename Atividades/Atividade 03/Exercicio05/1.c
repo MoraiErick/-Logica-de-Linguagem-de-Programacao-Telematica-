@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 int main() {
-    int i = 1; // Inicializar variável com o primeiro número
+    int i = 1; 
 
     while (i <= 10) {
-        if (i % 2 == 0) { // Verificar se o número é par
+        if (i % 2 == 0) { 
             printf("%d ", i);
         }
-        i++; // Incrementar em 1 para ir para o próximo número
+        i++; 
     }
 
     printf("\n");

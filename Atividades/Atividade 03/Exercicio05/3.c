@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 int main() {
-    int soma = 0; // Inicializar variável para armazenar a soma
+    int soma = 0; 
 
     for (int i = 1; i <= 10; i++) {
-        soma += i; // Adicionar o valor de i à soma
+        soma += i; 
     }
 
     printf("A soma dos primeiros 10 números inteiros positivos é: %d\n", soma);
