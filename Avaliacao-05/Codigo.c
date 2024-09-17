@@ -1,57 +1,53 @@
 #include <stdio.h>
+#include <string.h>
 
-typedef struct {
-    int matricula;
-    char nome[20];
-    float N1;
-    float N2;
-    float Media;
-    int Faltas;
-    char Reprovado_SN;
-} Aluno;
-
-void verifica_aprovacao(Aluno *aluno) {
-    
-    aluno->Media = (aluno->N1 + aluno->N2) / 2.0;
-
-    if (aluno->Faltas >= 20) {
-        aluno->Reprovado_SN = 'S';
-    } else {
-        aluno->Reprovado_SN = 'N';
-    }
-}
-
-void mostra_aprovacao(Aluno aluno) {
-    printf("Aluno %d:\n", aluno.matricula);
-    printf("Matrícula: %d\n", aluno.matricula);
-    printf("Nome: %s\n", aluno.nome);
-    printf("N1: %.2f\n", aluno.N1);
-    printf("N2: %.2f\n", aluno.N2);
-    printf("Faltas: %d\n", aluno.Faltas);
-    printf("Media: %.2f\n", aluno.Media);
-
-    if (aluno.Reprovado_SN == 'S') {
-        printf("REPROVADO POR FALTA\n\n");
-    } else if (aluno.Media < 6.0) {
-        printf("REPROVADO POR MEDIA\n\n");
-    } else {
-        printf("APROVADO\n\n");
-    }
-}
+#define MAX_LINE 1024
 
 int main() {
-    Aluno alunos[5] = {
-        {1, "João", 8.5, 9.0, 0.0, 25,' '},
-        {2, "Maria", 9.0, 8.0, 0.0, 1,' '},
-        {3, "Pedro", 7.5, 8.5, 0.0, 3,' '},
-        {4, "Ana", 9.5, 9.5, 0.0, 20,' '},
-        {5, "Luiz", 8.0, 7.0, 0.0, 4,' '}
-    };
+    FILE *arquivo;
+    char linha[MAX_LINE];
+    int escolha;
 
-    for (int i = 0; i < 5; i++) {
-        verifica_aprovacao(&alunos[i]);
-        mostra_aprovacao(alunos[i]);
+    // Criar arquivo em modo de escrita
+    arquivo = fopen("meu_arquivo.txt", "w");
+    if (arquivo == NULL) {
+        printf("Erro ao criar arquivo!\n");
+        return 1;
     }
+
+    // Menu para escolher se vai escrever mais algum texto
+    do {
+        printf("Digite um texto (ou 'sair' para fechar o arquivo):\n");
+        fgets(linha, MAX_LINE, stdin);
+        linha[strcspn(linha, "\n")] = 0; // Remover caractere de quebra de linha
+
+        if (strcmp(linha, "sair") != 0) {
+            fprintf(arquivo, "%s\n", linha);
+        } else {
+            break;
+        }
+    } while (1);
+
+    // Fechar arquivo
+    fclose(arquivo);
+
+    // Abrir arquivo em modo de leitura
+    arquivo = fopen("meu_arquivo.txt", "r");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir arquivo!\n");
+        return 1;
+    }
+
+    // Mostrar cabeçalho
+    printf(" \n======== Conteúdo do Arquivo ========\n");
+
+    // Ler cada linha do arquivo
+    while (fgets(linha, MAX_LINE, arquivo) != NULL) {
+        printf("%s", linha);
+    }
+
+    // Fechar arquivo
+    fclose(arquivo);
 
     return 0;
 }
